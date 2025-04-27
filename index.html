@@ -11,9 +11,25 @@
     <h1>Mohamed Ramadan Abdulla</h1>
     <h2>Java Script</h2>
     <h3>Lap_1</h3>
-
-
-<script src="script/External.js"></script>
+<!-- 
+    <script>
+        let number1 = 3;
+        console.log(number1);
+    </script> -->
+    <!-- 
+    this will return 3 because the internal script will be run 
+    then it will go to the external script  
+    -->
+    <script src="script/External.js"></script>
+    <!-- <script>
+        let number1 = 3;
+        console.log(number1);
+    </script> -->
+    <!-- 
+the number1 declared in the first internal script ,
+then it will be an errer in the last internal script 
+index.html:24 Uncaught SyntaxError: Identifier 'number1' has already been declared (at index.html:24:9)
+-->
 </body>
 
 </html>
