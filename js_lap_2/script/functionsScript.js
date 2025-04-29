@@ -30,9 +30,16 @@
 //     return sorted_string;
 // }
 
-function filtering_array(arr1, arr2) {
-    let filtering = arr1.filter(elem => arr2.includes(elem));
+// function filtering_array(arr1, arr2) {
+//     let filtering = arr1.filter(elem => arr2.includes(elem));
+//     return filtering;
+// }
+
+
+function duplicated_nums(arr) {
+    let filtering = arr.filter((elem, index) => {
+        return arr.indexOf(elem) === index;
+    })
     return filtering;
 }
-
 
