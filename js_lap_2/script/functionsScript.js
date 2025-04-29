@@ -11,14 +11,24 @@
 //     let resultString = newArr.join(" ");
 //     console.log(resultString);
 // }
-function longest_word(sentence) {
-    // let sentence = "Web Development Tutorial";
-    let arr = sentence.split(" ");
-    let longest = arr[0];
-    let longestWord = arr.forEach((word) => {
-        if (word.length > longest.length) {
-            longest = word;
-        }
-    });
-    return longest;
+// function longest_word(sentence) {
+//     // let sentence = "Web Development Tutorial";
+//     let arr = sentence.split(" ");
+//     let longest = arr[0];
+//     let longestWord = arr.forEach((word) => {
+//         if (word.length > longest.length) {
+//             longest = word;
+//         }
+//     });
+//     return longest;
+// }
+
+function sort_string(str) {
+    let arr = str.split("");
+    let sorted = arr.sort();
+    let sorted_string = sorted.join("");
+    return sorted_string;
 }
+console.log(sort_string("javascript"));
+
+
