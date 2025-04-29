@@ -23,12 +23,16 @@
 //     return longest;
 // }
 
-function sort_string(str) {
-    let arr = str.split("");
-    let sorted = arr.sort();
-    let sorted_string = sorted.join("");
-    return sorted_string;
+// function sort_string(str) {
+//     let arr = str.split("");
+//     let sorted = arr.sort();
+//     let sorted_string = sorted.join("");
+//     return sorted_string;
+// }
+
+function filtering_array(arr1, arr2) {
+    let filtering = arr1.filter(elem => arr2.includes(elem));
+    return filtering;
 }
-console.log(sort_string("javascript"));
 
 
