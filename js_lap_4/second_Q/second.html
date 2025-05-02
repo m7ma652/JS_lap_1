@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lap_4_second</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #studentTable tbody tr.high-grade {
+            background-color: lightgreen;
+        }
+
+        #studentTable tbody tr.medium-grade {
+            background-color: yellow;
+        }
+
+        #studentTable tbody tr.low-grade {
+            background-color: red;
+        }
+
+        #studentTable tbody tr td.highlight {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mohamed Ramadan Abdulla</h1>
+    <h2>JS_lap_2_second</h2>
+
+    <form id="studentForm">
+        <div>
+            <label>Department</label>
+            <label for="sd">SD<input type="radio" name="department" value="SD" id="sd"></label>
+            <label for="os">OS<input type="radio" name="department" value="OS" id="os"></label>
+            <label for="el">EL<input type="radio" name="department" value="EL" id="el" checked></label>
+        </div>
+
+        <div>
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName">
+            <span id="nameError" class="error"></span>
+        </div>
+
+        <div>
+            <label for="studentGrade">Student Grade</label>
+            <input type="text" id="studentGrade">
+            <span id="gradeError" class="error"></span>
+        </div>
+
+        <button type="button" id="addBtn">Add</button>
+    </form>
+
+    <div>
+        <label for="sort">Sort By</label>
+        <select id="sort">
+            <option value="name" selected>Name</option>
+            <option value="grade">Grade</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="filter">Filter By</label>
+        <select id="filter">
+            <option value="all" selected>All</option>
+            <option value="failed">Failed< /option>
+        </select>
+    </div>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Grade</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="second.js"></script>
+</body>
+
+</html>
