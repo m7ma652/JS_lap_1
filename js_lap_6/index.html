@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_lap_7</title>
+    <style>
+        .show {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .show th,
+        .show td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mohamed Ramadan Abdulla</h1>
+    <h2>Js_lap_7</h2>
+</body>
+<!-- <script type="module" src="basemodule.js"></script> -->
+<script>
+    async function getData() {
+        let result = await fetch("https://jsonplaceholder.typicode.com/users")
+            .then((data) => data.json())
+        return result;
+    }
+
+
+    function createRowInTable(table, dataObject, cloumnName) {
+
+        let tr = document.createElement("tr");
+
+        for (const key in dataObject) {
+            if (!cloumnName.includes(key)) {
+                continue;
+            }
+            let td = document.createElement("td");
+            td.textContent = (typeof dataObject[key] === 'object')
+                ? JSON.stringify(dataObject[key])
+                : dataObject[key];
+
+            tr.appendChild(td);
+        }
+
+        table.appendChild(tr);
+    }
+    function insertHeader(table, dataObject, cloumnName) {
+        let tr = document.createElement("tr");
+
+        for (const key in dataObject) {
+            if (!cloumnName.includes(key)) {
+                continue;
+            }
+            let td = document.createElement("td");
+            td.textContent = key;
+            tr.appendChild(td);
+
+        }
+        table.appendChild(tr);
+    }
+    function createTable(data, cloumnName) {
+        let table1 = document.createElement("table");
+        table1.id = "myTable";
+        table1.classList.add("show")
+
+        document.body.appendChild(table1);
+
+        insertHeader(table1, data[0], cloumnName);
+
+        for (let i = 0; i < data.length; i++) {
+
+            createRowInTable(table1, data[i], cloumnName);
+
+        }
+
+
+    }
+
+    let cloumnName = ["username", "email", "company", "address"]
+    getData().then((data) => createTable(data, cloumnName));
+
+</script>
+
+
+</html>
